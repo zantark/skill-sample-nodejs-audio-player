@@ -18,17 +18,17 @@
       "distributionCountries": [],
       "isAvailableWorldwide": true,
       "locales": {
-        "en-US": {
-          "description": "Sample skill using the AudioPlayer interface",
+        "fr-FR": {
+          "description": "Exemple de skill utilisant l'interface AudioPlayer",
           "examplePhrases": [
-            "Alexa open audio player sample"
+            "Alexa ouvre audio player"
           ],
           "keywords": [],
-          "name": "Audioplayer sample",
-          "summary": "Sample Short Description"
+          "name": "Exemple Audioplayer",
+          "summary": ""
         }
       },
-      "testingInstructions": "Sample Testing Instructions."
+      "testingInstructions": "Instructions de test."
     }
   }
 }
