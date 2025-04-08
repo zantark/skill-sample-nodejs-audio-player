@@ -15,7 +15,7 @@ const LaunchRequestHandler = {
         return Alexa.getRequestType(handlerInput.requestEnvelope) === 'LaunchRequest';
     },
     handle(handlerInput) {
-        const speakOutput = 'Welcome, you can say "play audio" to start listening to music. What would you like to do?';
+        const speakOutput = 'Bienvenue, vous pouvez dire "joue ma radio" pour démarrer l\'écoute de la musique. Que souhaitez-vous faire ?';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -36,7 +36,7 @@ const PlayAudioIntentHandler = {
     async handle(handlerInput) {
         const playbackInfo = await getPlaybackInfo(handlerInput);
 
-        const speakOutput = 'Playing the audio stream.';
+        const speakOutput = 'Lecture du flux audio.';
         const playBehavior = 'REPLACE_ALL';
         const podcastUrl = 'https://audio1.maxi80.com';
         
@@ -97,7 +97,7 @@ const UnsupportedAudioIntentHandler = {
                 );
     },
     async handle(handlerInput) {
-        const speakOutput = 'Sorry, I can\'t support that yet.';
+        const speakOutput = 'Désolé, je ne supporte pas encore cette instruction.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -111,7 +111,7 @@ const HelpIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.HelpIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'You can say "play audio" to start playing music! How can I help?';
+        const speakOutput = 'Vous pouvez dire "joue la radio" pour démarrer l\'écoute! Comment puis-je vous aider ?';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -248,7 +248,7 @@ const FallbackIntentHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'AMAZON.FallbackIntent';
     },
     handle(handlerInput) {
-        const speakOutput = 'Sorry, I don\'t know about that. Please try again.';
+        const speakOutput = 'Désolé, je ne connais pas ça. Essayez autre chose.';
 
         return handlerInput.responseBuilder
             .speak(speakOutput)
@@ -300,7 +300,7 @@ const ErrorHandler = {
         return true;
     },
     handle(handlerInput, error) {
-        const speakOutput = 'Sorry, I had trouble doing what you asked. Please try again.';
+        const speakOutput = 'Désolé, je ne parviens pas à faire ce que vous demandez. Essayez autre chose.';
         console.log(`~~~~ Error handled: ${JSON.stringify(error)}`);
 
         return handlerInput.responseBuilder
